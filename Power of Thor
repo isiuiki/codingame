@@ -20,9 +20,6 @@ class Player {
     
         // game loop
         while (true) {
-            int E = in.nextInt(); // The level of Thor's remaining energy, representing the number of moves he can still make.
-            //in.nextLine();
-    
             String direction = "";
         	if (TY < LY) {
                 TY++;
