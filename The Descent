@@ -1,0 +1,51 @@
+import java.util.*;
+import java.io.*;
+import java.math.*;
+
+/**
+ * Auto-generated code below aims at helping you parse
+ * the standard input according to the problem statement.
+ **/
+class Player {
+
+    public static void main(String args[]) {
+        Scanner in = new Scanner(System.in);
+        int[] mountainH = new int[9];
+        int highest;
+        int place = 0;
+
+        // game loop
+        while (true) {
+            int spaceX = in.nextInt();
+            int spaceY = in.nextInt();
+            for (int i = 0; i < 8; i++) {
+             mountainH[i] = in.nextInt(); // represents the height of one mountain, from 9 to 0. Mountain heights are provided from left to right.
+            }
+            
+            highest = mountainH[0];
+            for(int i = 0; i < 8; i++){
+                if(mountainH[i] < mountainH[i+1]){
+                    if(highest < mountainH[i+1]){
+                    highest = mountainH[i+1];
+                    place = i+1;
+                    }
+                    else {}
+                }
+                else{}
+            }
+            if (highest < spaceY){
+                if(place == spaceX ){
+                     System.out.println("FIRE");
+                }
+                else {
+                    System.out.println("HOLD");
+                }
+            }
+            else{
+                System.out.println("HOLD");
+            }
+            highest = 0;
+            
+        }
+    }
+}
